@@ -19,7 +19,7 @@ class ForumTest {
     @BeforeEach
     void setUp() {
         forum = new Forum();
-        posts = new Post[5];
+        posts = new Post[6];
         posts[0] = new Post("Author 1", 1, "Title 1", "Content 1",now,0);
         posts[1] = new Post("Author 2", 2, "Title 2", "Content 2",now,0);
         posts[2] = new Post("Author 3", 3, "Title 3", "Content 3",now,0);
@@ -32,16 +32,19 @@ class ForumTest {
 
     @Test
     void addPost() {
-        assertTrue(forum.addPost(posts[4]));
+        assertFalse(forum.addPost(posts[5]));
         assertFalse(forum.addPost(posts[4]));
     }
 
     @Test
     void removePost() {
+        assertTrue(forum.removePost(1));
+        assertFalse(forum.removePost(6));
     }
 
     @Test
     void updatePost() {
+        assertTrue(forum.updatePost(1,"New Content"));
     }
 
     @Test

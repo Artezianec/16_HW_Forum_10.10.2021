@@ -20,7 +20,6 @@ public class Post implements Comparable<Post> {
         this.likes = likes;
     }
 
-
     public String getAuthor() {
         return author;
     }

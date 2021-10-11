@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.function.Predicate;
 
 public class Forum implements IForum {
-    private Post[] posts;
+    private Post[] posts = new Post[6];
     private int size = 0;
 
     @Override
